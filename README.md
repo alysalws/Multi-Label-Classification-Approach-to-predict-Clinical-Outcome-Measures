@@ -8,7 +8,7 @@ This project uses a Multi Label Classification Model to investigate whether clin
 
 ## 2. Source of the dataset
 
-The primary data used in this research is the clinical trial protocol information collected from [ClinicalTrials.gov,](https://clinicaltrials.gov/)], a publicly accessible global registry maintained by the U.S. National Library of Medicine. This registry contains more than 420 thousand clinical trial records documented since Year 2000. It is selected out of 17 other global registries primarily because it is the oldest and largest one. Also, this registry offers a RESTful Application Programming Interface (API) that provides convenient access to protocol information from computer programs. 
+The primary data used in this research is the clinical trial protocol information collected from [ClinicalTrials.gov,](https://clinicaltrials.gov/), a publicly accessible global registry maintained by the U.S. National Library of Medicine. This registry contains more than 420 thousand clinical trial records documented since Year 2000. It is selected out of 17 other global registries primarily because it is the oldest and largest one. Also, this registry offers a RESTful Application Programming Interface (API) that provides convenient access to protocol information from computer programs. 
 
 
 
