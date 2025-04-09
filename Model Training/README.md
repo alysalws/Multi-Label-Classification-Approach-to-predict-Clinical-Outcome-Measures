@@ -1,4 +1,4 @@
-### Feature Engineering**
+### Feature Engineering
 
 Riding on the findings from Exploratory Data Analysis, the features in the dataset were further consolidated. First, the number of categories in <Age (min) years> are collapsed from fifteen groups to two groups. Studies with a minimum age eligibility of 11 years old or below are grouped into ‘infant studies’, and ‘teenager studies’ if otherwise. Second, instead of creating dummy variables for each country, the association between the country and the outcome measures is factored in by creating two binary variables to identify whether the clinical trial takes place in developed and developing countries. The list of developed and developing countries is retrieved from the report prepared by the United Nations Development Programme (2021), which has ranked each country based on its corresponding Human Development Index (HDI). Country with an HDI higher than 0.8 is classified as a Developed Country by the United Nations.
 
@@ -15,7 +15,7 @@ To prevent data leakage from the training data into the testing data during the 
 
 After feature engineering, a total of 62 columns (Features: 60, output labels: 2) and 3,784 entries remained in the dataset (training set: 2,649, testing set: 1,135).
 
-### Model Training and Performance Evaluation
+### Model Training
 
 27 algorithms were trained with respect to the 3 Multi Label Classification methods namely problem transformation, algorithm adaptation and ensemble method. 
 
@@ -41,4 +41,10 @@ For tied sets, the algorithms were assigned the average of their ranks. For exam
 
 ![image](https://github.com/user-attachments/assets/f6b48e50-3d1e-45de-b1eb-46903296b174)
 
+**Performance Evaluation**
+
+Based on the average rankings , the best performing model is MVC-RF, followed by BR-XGB and BRkNN. The confusion matrix of MVC-RF shows that the model
+has correctly predicted 211/ (211+119) = 63.9% of clinical trials using questionnaires (majority class) but only 36/ (36+74) = 32.7% of clinical trials using patient diary (minority class) out of the respective totals in the dataset. A more balanced dataset would potentially improve the recall scores for both labels. 
+
+To understand how useful the features were in making predictions in the best algorithm, the Permutation Feature Importance was computed for each feature in both the training and testing data. It is found that the 5 most important features by order are number of participants, study phase, disease type, study duration, and masking type. 
 
