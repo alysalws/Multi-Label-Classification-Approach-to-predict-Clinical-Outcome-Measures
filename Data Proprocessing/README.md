@@ -1,4 +1,7 @@
+**Data Cleaning and Transformation**
+
 The following steps were conducted to clean and transform the dataset to ensure it is realiable and meaningful for model training.
+
 1. Remove clinical trials that are only eligible for participants aged 16 or above were removed.
 2. Remove trials with missing Gender, Minimum Age eligibility and Maximum Age eligibility were disregarded. 
 3. Remove duplicated columns.
@@ -7,6 +10,7 @@ The following steps were conducted to clean and transform the dataset to ensure 
 6. Remove study records with a study duration of less than or equal to 0 days were removed from the dataset.
 
 Then, new columns were added to the dataset in the form of binary or numerical columns by drawing information from other columns. This includes:
+
 1. The start year of the clinical trial and total study duration.
 2. The type of intervention (e.g. procedural, behavioural, drug)
 3. The use of placebo
@@ -15,6 +19,7 @@ Then, new columns were added to the dataset in the form of binary or numerical c
 6. The number of study arms to the dataset
 
 Lastly, Natural Language Processing (NLP) techniques and human judgement were applied to categorize and extract information from the Free Text columns.
+
 1. Split the  sentences in Free Text columns (i.e. tokenized in NLP terminology) into individual words or words consisting hyphens or forward slashes (e.g. ‘10 gram/day’, ‘cancer’, ‘rating-scale’).
 2. USe SpaCy’s pipeline package namely ‘en_core_sci_lg’ to disambiguate the abbreviations and acronyms of medical terms.
 3. Replace synonyms and words that convey similar meanings in Free Text columns with one standard wording.
@@ -22,7 +27,7 @@ Lastly, Natural Language Processing (NLP) techniques and human judgement were ap
 
 A 3,823 records and 230 columns remained in the dataset for Exploratory Data Analysis after the data is cleaned and transformed. 
 
-Key Insights from Exploratory Data Analysis & Implication for Methodology
+**Key Insights from Exploratory Data Analysis & Implication for Methodology**
 
 There are three key takeaways from Exploratory Data Analysis. First, the number of clinical trials using Questionnaire is almost three times of that using Patient Diary, and the number of clinical trials using 1 measure significantly exceeds that using 2 measures. An imbalanced dataset is an issue for MLC, because it will affect the model’s ability to effectively learn the decision boundary, resulting in poor predictions for the minority class in the testing dataset. This suggests the need to adjust the weight parameters in MLC models to avoid biased predictions towards the majority class,
 
