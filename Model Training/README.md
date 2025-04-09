@@ -41,7 +41,7 @@ For tied sets, the algorithms were assigned the average of their ranks. For exam
 
 ![image](https://github.com/user-attachments/assets/f6b48e50-3d1e-45de-b1eb-46903296b174)
 
-**Performance Evaluation**
+### Performance Evaluation
 
 Based on the average rankings , the best performing model is MVC-RF, followed by BR-XGB and BRkNN. The confusion matrix of MVC-RF shows that the model
 has correctly predicted 211/ (211+119) = 63.9% of clinical trials using questionnaires (majority class) but only 36/ (36+74) = 32.7% of clinical trials using patient diary (minority class) out of the respective totals in the dataset. A more balanced dataset would potentially improve the recall scores for both labels. 
